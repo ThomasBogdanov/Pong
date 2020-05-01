@@ -22,3 +22,12 @@ Game.keys = {
   39: 'right',
   40: 'down'
 }
+
+Game.prototype.start = function() {
+  const fps = 60, interval = 1000 / fps
+
+  setInterval(function() {
+    this.update()
+    this.draw()
+  }, interval)
+}
