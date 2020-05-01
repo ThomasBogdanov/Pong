@@ -31,3 +31,19 @@ Game.prototype.start = function() {
     this.draw()
   }, interval)
 }
+
+Game.prototype.update = function() {
+  this.entities.forEach(function(entity) {
+    if (entity.update) {
+      entity.update()
+    }
+  })
+}
+
+Game.prototype.draw = function() {
+  this.entities.forEach(function(entity) {
+    if (entity.draw) {
+      entity.draw(this.context)
+    }
+  })
+}
